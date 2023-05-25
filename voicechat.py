@@ -54,7 +54,7 @@ def init_load_setups():
     # setup asr engine
     asrmodel = whisper.load_model('base', download_root='asrmodel' )
     # setup chatGPT instance
-    openai.api_key = os.getenv("OPENAI_API_KEY").strip('"')
+    openai.api_key = ""
     conversation = Conversation(engine="text-davinci-003")
     # load tts voices and language code mapping
     ttsVoices = {}
