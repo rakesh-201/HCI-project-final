@@ -54,7 +54,7 @@ def init_load_setups():
     # setup asr engine
     asrmodel = whisper.load_model('base', download_root='asrmodel' )
     # setup chatGPT instance
-    openai.api_key = ""
+    openai.api_key = "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"
     conversation = Conversation(engine="text-davinci-003")
     # load tts voices and language code mapping
     ttsVoices = {}
@@ -99,8 +99,10 @@ def app():
 
         st.write('')
 
-        with st.spinner("Getting ChatGPT answer for your command ..."):
-            response = chatgpt.generate_response(text)
+        with st.spinner("Getting response for you ..."):
+            # consider you are a human friend of mine and we are having  a normal conversation, please respond to what I say accordingly and try to extend conversation:
+            newText = "consider I want to improve my language skills and for this purpose we are having a normal human conversation, please respond accordingly and try to extend conversation: \n\n" + text
+            response = chatgpt.generate_response(newText)
             st.markdown("<b>chatGPT:</b> " + response, unsafe_allow_html=True)
             print('chatGPT response is: '   + response)
             spokenResponse = re.sub(r'\s+', ' ', response)
