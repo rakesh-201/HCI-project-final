@@ -67,9 +67,59 @@ def init_load_setups():
 
 # main voice chat app 
 def app():
-    # Put expensive initialize computation here
-    st.title("ChatGPT Voice Assistant")
-    st.subheader("It understands 97 Spoken Languages!")
+    # # Put expensive initialize computation here
+    # st.title("LinguaLink")
+    # st.subheader("Enchance your Language Skills")
+
+    st.set_page_config(layout="wide")
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    # Define background image
+    st.markdown(
+        """
+        <style>
+        body {
+            background-image: url('https://img.freepik.com/premium-photo/blur-background-empty-modern-office-background-city-center-workspace-interior-design_31965-68174.jpg');
+            background-size: cover;
+            
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    # Page header
+    st.markdown("# LinguaLink")
+    st.markdown("#### Enhance your Language Skills")
+
+    # st.markdown("![Alt Text](https://img.freepik.com/premium-photo/blur-background-empty-modern-office-background-city-center-workspace-interior-design_31965-68174.jpg)")
+    # st.markdown(
+    #     """
+    #     <div style="text-align:center" >
+    #         ![Alt Text](https://img.freepik.com/premium-photo/blur-background-empty-modern-office-background-city-center-workspace-interior-design_31965-68174.jpg)
+    #     </div>
+    #     """
+    # )
+
+    st.image("https://img.freepik.com/premium-photo/blur-background-empty-modern-office-background-city-center-workspace-interior-design_31965-68174.jpg", use_column_width=True)
+
+
+
+
+
+
+
+
 
     # get initial setup
     asr, chatgpt, ttsVoices = init_load_setups()
