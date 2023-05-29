@@ -89,7 +89,8 @@ def app():
         """
         <style>
         body {
-            background-image: url('https://img.freepik.com/premium-photo/blur-background-empty-modern-office-background-city-center-workspace-interior-design_31965-68174.jpg');
+            background-color: #b72ab7;
+            
             background-size: cover;
             
         }
@@ -99,8 +100,8 @@ def app():
     )
 
     # Page header
-    st.markdown("# LinguaLink")
-    st.markdown("#### Enhance your Language Skills")
+    st.markdown("# Practice Session")
+    # st.markdown("#### ")
 
     # st.markdown("![Alt Text](https://img.freepik.com/premium-photo/blur-background-empty-modern-office-background-city-center-workspace-interior-design_31965-68174.jpg)")
     # st.markdown(
@@ -111,7 +112,6 @@ def app():
     #     """
     # )
 
-    st.image("https://img.freepik.com/premium-photo/blur-background-empty-modern-office-background-city-center-workspace-interior-design_31965-68174.jpg", use_column_width=True)
 
 
 
@@ -126,6 +126,9 @@ def app():
 
     # recorder 
     audio = audiorecorder("Push to Talk", "Recording... (push again to stop)")
+    
+    ##########################################################
+    st.image("./man4.png", use_column_width=True)
 
     if len(audio) > 0:
         # To play audio in frontend:

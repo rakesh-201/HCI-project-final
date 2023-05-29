@@ -15,21 +15,42 @@ function MenuButton() {
       rotationAngleInclusive={false}
     >
       <CircleMenuItem
-        onClick={() => window.location.href = "https://8501-rakesh201-hciprojectfin-hu6kblgzct8.ws-us98.gitpod.io/"}
-        tooltip="Category"
+        onClick={() =>
+          (window.location.href =
+            "https://8501-rakesh201-hciprojectfin-hu6kblgzct8.ws-us98.gitpod.io/")
+        }
+        tooltip="Practice"
         tooltipPlacement={TooltipPlacement.Right}
         // style={{ color: "yellow" }}
       >
-        <i class="fa-solid fa-list"></i>
-      </CircleMenuItem>
-      <CircleMenuItem tooltip="Top Seller">
-      <i class="fa-solid fa-utensils"></i>
-      </CircleMenuItem>
-      <CircleMenuItem tooltip="Home">
-        <i class="fa fa-home" aria-hidden="true"></i>
-      </CircleMenuItem>
-      <CircleMenuItem tooltip="About">
         ​<i class="fa-solid fa-people-group"></i>
+      </CircleMenuItem>
+      <CircleMenuItem
+        tooltip="Settings"
+        onClick={() =>
+          (window.location.href =
+            "https://8501-rakesh201-hciprojectfin-hu6kblgzct8.ws-us98.gitpod.io/")
+        }
+      >
+        <i class="fa-solid fa-gear"></i>
+      </CircleMenuItem>
+      <CircleMenuItem
+        tooltip="Theme"
+        onClick={() =>
+          (window.location.href =
+            "https://8501-rakesh201-hciprojectfin-hu6kblgzct8.ws-us98.gitpod.io/")
+        }
+      >
+        <i class="fa-regular fa-image"></i>
+      </CircleMenuItem>
+      <CircleMenuItem
+        tooltip="Feedback"
+        onClick={() =>
+          (window.location.href =
+            "https://8501-rakesh201-hciprojectfin-hu6kblgzct8.ws-us98.gitpod.io/")
+        }
+      >
+        <i class="fa-solid fa-phone"></i>
       </CircleMenuItem>
     </CircleMenu>
   );

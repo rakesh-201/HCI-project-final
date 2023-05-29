@@ -25,7 +25,7 @@ function Carousel({ setMain }) {
   };
 
   const desc =
-    "Welcome to our online restaurant where you can indulge in a variety of mouth-watering dishes. From classic comfort foods to innovative culinary creations, we have it all. Order now and treat yourself to a delectable meal that will tantalize your taste buds!";
+    "Welcome to LinguaLink, the ultimate language skills improvement app. Whether you're a beginner or an advanced learner, our cutting-edge technology and immersive conversational approach will take your language proficiency to new heights. Start your journey to fluency today with LinguaLink and unlock a world of linguistic possibilities.";
 
   return (
     <div className="row purple-text" style={styles.con}>
@@ -33,8 +33,8 @@ function Carousel({ setMain }) {
         className="col l6 s12 hide-on-med-and-down left-align"
         style={styles.textCon}
       >
-        <h2 className=""> FOOD SPECS</h2>
-        <h5 className="">Security to the next level</h5>
+        <h2 className="">LinguaLink</h2>
+        <h5 className="">Unlock Fluency, Unleash Potential</h5>
         <p className="">{desc}</p>
         <div className="d-flex align-items-center justify-content-center ">
           <MenuButton />
