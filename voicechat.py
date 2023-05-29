@@ -125,7 +125,7 @@ def app():
     asr, chatgpt, ttsVoices = init_load_setups()
 
     # recorder 
-    audio = audiorecorder("Push to Talk", "Recording... (push again to stop)")
+    audio = audiorecorder("Tap to start recording", "Recording... (tap to stop recording)")
     
     ##########################################################
     st.image("./man4.png", use_column_width=True)
@@ -141,23 +141,25 @@ def app():
         recordFormat = get_audio_record_format(audioname)
         os.rename(audioname, audioname + recordFormat )
 
-        st.markdown("<b>Chat History</b> ", unsafe_allow_html=True)
+        st.markdown("<b>Chats:</b> ", unsafe_allow_html=True)
 
-        with st.spinner("Recognizing your voice command ..."):
+        with st.spinner("Recognizing your voice ..."):
             asr_result = asr.transcribe( audioname + recordFormat )
             text = asr_result["text"]
-            languageCode = asr_result["language"]
+            # languageCode = asr_result["language"]
+            languageCode = "en"
+            print(asr_result["language"])
             st.markdown("<b>You:</b> " + text, unsafe_allow_html=True)
             print('ASR result is:' + text)
 
         st.write('')
 
         with st.spinner("Getting response for you ..."):
-            # consider you are a human friend of mine and we are having  a normal conversation, please respond to what I say accordingly and try to extend conversation:
-            newText = "consider I want to improve my language skills and for this purpose we are having a normal human conversation, please respond accordingly and try to extend conversation: \n\n" + text
+            newText = "consider you are a human friend of mine and we are having a normal conversation, please respond to what I say accordingly and try to extend conversation: \n\n" + text
+            # newText = "consider I want to improve my language skills and for this purpose we are having a normal human conversation, please respond accordingly and try to extend conversation: \n\n" + text
             response = chatgpt.generate_response(newText)
-            st.markdown("<b>chatGPT:</b> " + response, unsafe_allow_html=True)
-            print('chatGPT response is: '   + response)
+            st.markdown("<b>Friend:</b> " + response, unsafe_allow_html=True)
+            print('Friend response is: '   + response)
             spokenResponse = re.sub(r'\s+', ' ', response)
             spokenResponse = spokenResponse.lstrip().rstrip()
             #Speak the input text
